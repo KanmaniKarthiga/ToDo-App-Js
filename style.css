@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.heading{
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    top: 50px;
+    left: 120px;
+}
+h1{
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+    right: 150px;
+    top: 55px;
+}
+.header2{
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+}
+#iconplus{
+    font-size: 40px;
+    color: rgb(103, 103, 231);
+    position: absolute;
+    right: 280px;
+    top: 52px;
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    filter: blur(20);
+    pointer-events: none;
+}
+#addtask{
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: white;
+    position: fixed;
+    top: 35%;
+    left: 35%;
+    display: none;
+    animation: anim 2s 1;
+}
+@keyframes anim{
+    0%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+#list{
+    height: 35px;
+    width: 300px;
+    border: 1px solid black;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.listname{
+    color: red;
+    position: relative;
+    top: 25px;
+    left: 135px;
+}
+#add{
+    background-color: rgb(228, 66, 66);
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    position: relative;
+    top: 50px;
+    left: 88px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+#close{
+    background-color: rgb(228, 66, 66);
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border: none;
+    position: relative;
+    top: 50px;
+    left: 108px;
+    color: white;
+    font-size: 20px;
+}
