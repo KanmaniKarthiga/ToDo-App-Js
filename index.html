@@ -10,29 +10,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <section>
-        <div class="heading"><b>Tasks</b>   Lists</div>
-        <div class="add">
-            <i class="fa-solid fa-circle-plus" id="iconplus" onclick="addtask()"></i>
-            <!-- <span class="overlay"></span> -->
-            <h1>Add Item</h1>
+    <div>
+        <nav>
+            <div class="heading"><b>Tasks</b> Lists</div>
+            <div class="add">
+                <i class="fa-solid fa-circle-plus" id="iconplus" onclick="addtask()"></i>
+                <h1 onclick="addtask()">Add Item</h1>
+            </div>
+        </nav>
+        <div class="unique">
+            <i class="fa-solid fa-circle-arrow-left" style="color: #f4f4fa;" id="backicon"></i>
+            <div class="textofback">Back</div>
+            <div class="head"></div>
+            <i class="fa-solid fa-circle-plus" id="iconplus2"></i>
         </div>
+        <section>
+            <div class="header2">No Items in the Todo list</div>
+        </section>
+    </div>
+    <div id="addtask">
+        <h1 class="listname">Add New List</h1>
+        <input type="text" id="list" placeholder="Add New List">
+        <button id="add" onclick="createtasks()">Add</button>
+        <button id="close" onclick="hide()">Close</button>
+    </div>
 
-        <div id="addtask">
-            <h1 class="listname">Add New List</h1>
-            <input type="text" id="list">
-            <button id="add" onclick="createPopup()">Add</button>
-            <button id="close" onclick="hide()">Close</button>
-        </div>
+    <div id="additem">
+        <div class="itemname">Add New Item</div>
+        <input type="text" id="iteminlist" placeholder="Add New Item" />
+        <button id="add_itemBtn">Add</button>
+        <button id="close_itemBtn">Close</button>
+    </div>
 
-        <div class="header2">No Items in the Todo list</div>
-    </section>
-
-    <div id="todos" class="todocontainer"></div>
 
 
     <script src="./script.js"></script>
