@@ -13,7 +13,8 @@ var itemText = document.getElementById('iteminlist')
 var uniqueAdd = document.querySelector('#iconplus2')
 var uniqueClose = document.querySelector('.textofback')
 var backicon = document.querySelector('#backicon')
-console.log(itemText)
+var addCard;
+
 
 
 function addtask(){
@@ -48,10 +49,47 @@ function createtasks(){
 	TodoHeading.classList.add('TodoHeading')
 	TodoHeading.innerHTML = `${listbtn.value}`
 
+	TodoHeading.addEventListener('click', () => {
+		var card = TodoHeading.parentNode
+		var cardText = listbtn.value
+		navbar.style.display = 'none'
+		section.style.display = 'none'
+		blurdiv.appendChild(card)
+		card.classList.add('uniquediv')
+		document.querySelector('.unique').style.display = 'flex'
+		document.querySelector('.head').innerHTML = `<h2>${cardText}</h2>`
+
+		document.querySelector('.textofback').addEventListener('click', () => {
+			navbar.style.display = 'flex'
+			section.style.display = 'flex'
+			document.querySelector('.unique').style.display = 'none'
+			section.appendChild(card)
+			card.classList.remove('uniquediv')
+		})
+
+		document.querySelector('#backicon').addEventListener('click', () => {
+			navbar.style.display = 'flex'
+			section.style.display = 'flex'
+			document.querySelector('.unique').style.display = 'none'
+			section.appendChild(card)
+			card.classList.remove('uniquediv')
+		})
+
+		document.querySelector('#iconplus2').addEventListener('click', () => {
+			blurdiv.classList.add('blur')
+			add.style.display = 'block'
+			navbar.style.display = 'flex'
+			section.style.display = 'flex'
+			document.querySelector('.unique').style.display = 'none'
+			section.appendChild(card)
+			card.classList.remove('uniquediv')
+		})
+	})
+
 	newTodo.appendChild(line)
 	newTodo.appendChild(delTodo)
 	delTodo.classList.add('delTodo')
-	delTodo.innerHTML = `X`
+	delTodo.innerHTML = `<span><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></span>`
 	delTodo.addEventListener('click', () => {
 		var delCard = delTodo.parentNode
 		delCard.remove()
@@ -59,81 +97,49 @@ function createtasks(){
 
 	newTodo.appendChild(addTodo)
 	addTodo.classList.add('addTodo')
-	addTodo.innerHTML = `+`
+	addTodo.innerHTML = `<span><i class="fa-sharp fa-solid fa-circle-plus" style="color: #1595d5;"></i></span>`
 	
 	addTodo.addEventListener('click', () => {
 		blurdiv.classList.add('blur')
 		item.style.display = "block"
+		addCard = addTodo.parentNode
 	})
 
-	TodoHeading.addEventListener('click', () =>{
-	newTodo.style.marginLeft = "400px"
-
-	var newHeader = document.createElement('div')
-	section.appendChild(newHeader)
-	newHeader.setAttribute('id', `newheader`)
-	newHeader.innerHTML = listbtn.value
-	newHeader.style.display = 'block'
-	navbar.style.display = 'none'
-	document.querySelector('.unique').style.display = 'flex'
-
-	uniqueAdd.addEventListener('click',() =>{
-		addtask()
-		document.querySelector('.unique').style.display = 'none'
-		newHeader.style.display = 'none'
-		section.style.display = 'flex'
-		navbar.style.display = 'block'
-		newTodo.style.margin = "2px"
-		
-	})
-	uniqueClose.addEventListener('click', () =>{
-		document.querySelector('.unique').style.display = 'none'
-		newHeader.style.display = 'none'
-		section.style.display = 'flex'
-		navbar.style.display = 'block'
-	})
-	backicon.addEventListener('click', () =>{
-		document.querySelector('.unique').style.display = 'none'
-		newHeader.style.display = 'none'
-		section.style.display = 'flex'
-		navbar.style.display = 'block'
-		newTodo.style.margin = "2px"
-	})
-
-
-})	
-	var itemCount = 0
 	item_closebtn.addEventListener('click', () =>{
 		item.style.display = 'none'
 		blurdiv.classList.remove('blur')
 	})
-	item_addbtn.addEventListener('click', () =>{
-		itemCount++;
-		blurdiv.classList.remove('blur')
-		item.style.display = 'none'
-
-		var newparent = document.createElement('div')
-		var newItem = document.createElement('div')
-		var statusbar = document.createElement('div')
-		
-		newTodo.appendChild(newparent)
-		newparent.appendChild(newItem)
-		newparent.appendChild(statusbar)
-
-		newItem.setAttribute('id', `newItem${itemCount}`)
-		newparent.classList.add('newItem')
-		newItem.innerHTML = itemText.value
-		
-		statusbar.classList.add('statusbar')
-		statusbar.innerHTML = "Mark Done"	
-		statusbar.addEventListener('click', () =>{
-			statusbar.style.display = 'none'
-			newItem.style.textDecoration = "line-through"
-			newItem.style.color = "blue"
-		})
-	})
 	
 }
 
+var itemCount = 0
+function list2(){
 	
+	itemCount++;
+	
+	blurdiv.classList.remove('blur')
+	item.style.display = 'none'
+	
+	var newparent = document.createElement('div')
+	newparent.setAttribute('id', `item${itemCount}`)
+	addCard.appendChild(newparent)
 
+	var newItem = document.createElement('div')
+	var statusbar = document.createElement('div')
+	
+	newparent.appendChild(newItem)
+	newparent.appendChild(statusbar)
+
+	newparent.classList.add(`newItem`)
+	newItem.innerHTML = itemText.value
+	newItem.style.marginLeft = '10px'
+	
+	statusbar.classList.add('statusbar')
+	statusbar.innerHTML = "Mark Done"	
+	statusbar.addEventListener('click', () =>{
+		statusbar.style.display = 'none'
+		newItem.style.textDecoration = "line-through"
+		newItem.style.color = "red"
+		newItem.style.marginLeft = "50px"
+	})
+}

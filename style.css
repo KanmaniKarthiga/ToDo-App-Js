@@ -45,7 +45,7 @@ h1{
     top: 35%;
     left: 35%;
     display: none;
-    animation: anim 2s 1;
+    animation: anim 1s 1;
 }
 @keyframes anim{
     0%{
@@ -71,7 +71,8 @@ h1{
     color: red;
     position: relative;
     top: 25px;
-    left: 120px;
+    left: 130px;
+    font-size: 25px;
 }
 .itemname{
     color: red;
@@ -150,7 +151,7 @@ section{
 
 .TodoHeading{
     font-size: 20px;
-    color: red;
+    color: rgb(230, 94, 94);
     position: relative;
     top: 8px;
     left: 0px;
@@ -170,17 +171,12 @@ section{
     padding-top: 7px;
 }
 .addTodo {
-	background-color: rgb(11, 88, 255);
-	color: white;
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	font-size: 25px;
+	
+	font-size: 30px;
     font-weight: bold;
 	position: absolute;
-	bottom: 10px;
-	right: 10px;
+	bottom: 7px;
+	right: 7px;
     padding-top: 2px;
 }
 .unique{
@@ -190,15 +186,22 @@ section{
 .newItem{
     font-size: 15px;
     font-family: 'Belanosima', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 20px;
 }
-/* .statusbar{
+.statusbar{
     font-size: 13px;
     height: 20px;
     width: 75px;
     border-radius: 30px;
-    background-color: rgb(36, 114, 231);
-} */
-#newheader{
+    background-color: #1595d5;
+    margin-right: 20px;
+    padding-top: 2px;
+
+}
+#card{
     position: absolute;
     top: 70px;
     left: 45%;
@@ -207,3 +210,76 @@ section{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
+.uniquediv{
+    font-size: 30px;
+    position: relative;
+	left: 610px;
+    top: 200px;
+}
+h2{
+    color: white;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100;
+    position: absolute;
+    left: 610px;
+    top: 70px;
+}
+
+
+@media (max-width: 500px) and (min-width: 250px){
+    .heading{
+        margin-left: -48px;
+    }
+    .header2{
+        position: absolute;
+        top: 215px;
+        left: 48px;
+    }
+    .add{
+        position: relative;
+        top: 20px;
+    }
+    h1{
+        display: none;
+    }
+    #iconplus{
+        position: absolute;
+        top: -80px;
+        left: 180px;
+    }
+    #addtask, #additem{
+        margin-left: -61px;
+        width: 250px;
+        height: 171px;
+        border-radius: 25px
+    }
+    .listname{
+        position: relative;
+        left: 55px;
+    }
+    .itemname{
+        position: relative;
+        left: 55px;
+    }
+    #list, #iteminlist{
+        width: 210px;
+        position: relative;
+        left: 21px;
+    }
+    #add, #add_itemBtn{
+        position: relative;
+        left: 17px;
+    }
+    #close, #close_itemBtn{
+        position: relative;
+        left: 30px;
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        margin-left: 112px;
+        gap: 30px;
+    }
+    
+} 
