@@ -33,7 +33,7 @@ function createtasks(){
 
     blurdiv.classList.remove('blur')
 	add.style.display = 'none'
-	document.querySelector('.header2').style.display = 'none'
+	document.querySelector('#header2').style.display = 'none'
 
     var newTodo = document.createElement("div")
     var TodoHeading = document.createElement("h1")
@@ -44,45 +44,59 @@ function createtasks(){
     section.appendChild(newTodo)
     newTodo.setAttribute('id', `newTodo${todoCount}`)
 	newTodo.classList.add('newTodo')
+	newTodo.style.display = 'block'
 
 	newTodo.appendChild(TodoHeading)
 	TodoHeading.classList.add('TodoHeading')
 	TodoHeading.innerHTML = `${listbtn.value}`
 
 	TodoHeading.addEventListener('click', () => {
+
+		var todos = document.querySelectorAll('.newTodo')
 		var card = TodoHeading.parentNode
-		var cardText = listbtn.value
+		var cardText = TodoHeading.innerHTML
 		navbar.style.display = 'none'
-		section.style.display = 'none'
-		blurdiv.appendChild(card)
-		card.classList.add('uniquediv')
+		card.style.display = 'block'
+		todos.forEach((boxes) =>{
+			if(boxes !== card)
+			{
+				boxes.style.display = 'none'
+				newTodo.style.marginLeft='400px'
+			}
+			
+		})
+		
 		document.querySelector('.unique').style.display = 'flex'
 		document.querySelector('.head').innerHTML = `<h2>${cardText}</h2>`
 
 		document.querySelector('.textofback').addEventListener('click', () => {
 			navbar.style.display = 'flex'
-			section.style.display = 'flex'
+			
 			document.querySelector('.unique').style.display = 'none'
-			section.appendChild(card)
-			card.classList.remove('uniquediv')
+			todos.forEach((boxes)=>{
+				boxes.style.display = 'block'
+				newTodo.style.marginLeft='0px'
+			})
 		})
 
 		document.querySelector('#backicon').addEventListener('click', () => {
 			navbar.style.display = 'flex'
-			section.style.display = 'flex'
+			
 			document.querySelector('.unique').style.display = 'none'
-			section.appendChild(card)
-			card.classList.remove('uniquediv')
+			todos.forEach((boxes)=>{
+				boxes.style.display = 'block'
+				newTodo.style.marginLeft='0px'
+			})
 		})
 
 		document.querySelector('#iconplus2').addEventListener('click', () => {
 			blurdiv.classList.add('blur')
-			add.style.display = 'block'
+			add.style.display = 'flex'
 			navbar.style.display = 'flex'
-			section.style.display = 'flex'
 			document.querySelector('.unique').style.display = 'none'
-			section.appendChild(card)
-			card.classList.remove('uniquediv')
+			todos.forEach((boxes)=>{
+				boxes.style.display = 'block'
+			})
 		})
 	})
 

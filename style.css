@@ -21,7 +21,7 @@ h1{
     right: 150px;
     top: 55px;
 }
-.header2{
+#header2{
     color: white;
     font-size: 30px;
     font-weight: 100;
@@ -171,7 +171,6 @@ section{
     padding-top: 7px;
 }
 .addTodo {
-	
 	font-size: 30px;
     font-weight: bold;
 	position: absolute;
@@ -210,12 +209,7 @@ section{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
-.uniquediv{
-    font-size: 30px;
-    position: relative;
-	left: 610px;
-    top: 200px;
-}
+
 h2{
     color: white;
     font-size: 30px;
@@ -231,7 +225,7 @@ h2{
     .heading{
         margin-left: -48px;
     }
-    .header2{
+    #header2{
         position: absolute;
         top: 215px;
         left: 48px;
