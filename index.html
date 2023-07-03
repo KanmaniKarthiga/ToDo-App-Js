@@ -15,21 +15,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
     <div>
         <nav>
             <div class="heading"><b>Tasks</b> Lists</div>
             <div class="add">
                 <i class="fa-solid fa-circle-plus" id="iconplus" onclick="addtask()"></i>
-                <h1 onclick="addtask()">Add Item</h1>
+                <h1 id="h1" onclick="addtask()">Add Item</h1>
             </div>
         </nav>
         <div class="unique">
             <i class="fa-solid fa-circle-arrow-left" style="color: #f4f4fa;" id="backicon"></i>
             <div class="textofback">Back</div>
             <div class="head"></div>
-            <i class="fa-solid fa-circle-plus" id="iconplus2"></i>
+            <i class="fa-solid fa-circle-plus" id="iconplus" onclick="addtask()"></i>
         </div>
         <section>
             <div id="header2">No Items in the Todo list</div>
@@ -48,9 +47,6 @@
         <button id="add_itemBtn" onclick="list2()">Add</button>
         <button id="close_itemBtn">Close</button>
     </div>
-
-
-
     <script src="./script.js"></script>
 </body>
 

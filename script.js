@@ -10,12 +10,9 @@ var item = document.getElementById('additem')
 var item_addbtn = document.querySelector('#add_itemBtn')
 var item_closebtn = document.querySelector('#close_itemBtn')
 var itemText = document.getElementById('iteminlist')
-var uniqueAdd = document.querySelector('#iconplus2')
 var uniqueClose = document.querySelector('.textofback')
 var backicon = document.querySelector('#backicon')
 var addCard;
-
-
 
 function addtask(){
     add.style.display = "block"
@@ -57,49 +54,62 @@ function createtasks(){
 		var cardText = TodoHeading.innerHTML
 		navbar.style.display = 'none'
 		card.style.display = 'block'
+		card.classList.add('position')
+		// newTodo.style.marginLeft='400px'
+		// newTodo.style.marginTop='100px'
+
 		todos.forEach((boxes) =>{
 			if(boxes !== card)
 			{
 				boxes.style.display = 'none'
-				newTodo.style.marginLeft='400px'
+				// newTodo.style.marginLeft='400px'		
 			}
-			
 		})
-		
 		document.querySelector('.unique').style.display = 'flex'
 		document.querySelector('.head').innerHTML = `<h2>${cardText}</h2>`
 
 		document.querySelector('.textofback').addEventListener('click', () => {
 			navbar.style.display = 'flex'
-			
 			document.querySelector('.unique').style.display = 'none'
 			todos.forEach((boxes)=>{
 				boxes.style.display = 'block'
-				newTodo.style.marginLeft='0px'
+				// newTodo.style.marginLeft='0px'
+				// newTodo.style.marginTop='0px'
+
 			})
+			card.classList.remove('position')
 		})
 
 		document.querySelector('#backicon').addEventListener('click', () => {
 			navbar.style.display = 'flex'
-			
 			document.querySelector('.unique').style.display = 'none'
+			todos.forEach((boxes)=>{
+				boxes.style.display = 'block'
+				// newTodo.style.marginLeft='0px'
+				// newTodo.style.marginTop='0px'
+
+			})
+			card.classList.remove('position')
+		})
+
+		addicon.addEventListener('click', () => {
+			add.style.display = "block"
+			blurdiv.classList.add('blur')
+		})
+		addbtn.addEventListener('click', ()=>{
+			document.querySelector('.unique').style.display = 'none'
+			navbar.style.display = 'flex'
+			document.querySelector('#header2').style.display = 'none'
 			todos.forEach((boxes)=>{
 				boxes.style.display = 'block'
 				newTodo.style.marginLeft='0px'
-			})
-		})
+				newTodo.style.marginTop='0px'
 
-		document.querySelector('#iconplus2').addEventListener('click', () => {
-			blurdiv.classList.add('blur')
-			add.style.display = 'flex'
-			navbar.style.display = 'flex'
-			document.querySelector('.unique').style.display = 'none'
-			todos.forEach((boxes)=>{
-				boxes.style.display = 'block'
 			})
+			card.classList.remove('position')
 		})
-	})
-
+		})
+			
 	newTodo.appendChild(line)
 	newTodo.appendChild(delTodo)
 	delTodo.classList.add('delTodo')

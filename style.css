@@ -9,11 +9,10 @@ body{
 .heading{
     color: white;
     font-size: 50px;
-    position: absolute;
-    top: 50px;
-    left: 120px;
+    margin-left: 115px;
+    margin-top: 50px;
 }
-h1{
+#h1{
     color: white;
     font-size: 30px;
     font-weight: 100;
@@ -135,7 +134,9 @@ section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 200px;
+    margin-top: 70px;
+    margin-left: 200px;
+    margin-right: 200px;
     gap: 30px;
 }
 .newTodo{
@@ -147,16 +148,16 @@ section{
 	border-radius: 9px;
 	position: relative;
 	text-align: center;
+    
 }
-
 .TodoHeading{
-    font-size: 20px;
+    font-size: 18px;
     color: rgb(230, 94, 94);
     position: relative;
-    top: 8px;
+    top: 10px;
     left: 0px;
     padding-bottom: 20px;
-    font-family: 'Belanosima', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .delTodo {
 	position: absolute;
@@ -219,61 +220,97 @@ h2{
     left: 610px;
     top: 70px;
 }
+.position{
+	left: 40%;
+    top: 80px;
+}
 
 
 @media (max-width: 500px) and (min-width: 250px){
-    .heading{
-        margin-left: -48px;
+    nav{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-left: -70px;
     }
+    
     #header2{
         position: absolute;
-        top: 215px;
-        left: 48px;
+        top: 200px;
+        left: 10px;
     }
     .add{
         position: relative;
-        top: 20px;
+        top: 60px;
+        left: -80px;
     }
     h1{
         display: none;
     }
     #iconplus{
-        position: absolute;
-        top: -80px;
-        left: 180px;
+       margin-top: -120px;
+       position: absolute;
+       left: 290px;
     }
-    #addtask, #additem{
-        margin-left: -61px;
+    #addtask{
+        margin-left: -98px;
         width: 250px;
         height: 171px;
-        border-radius: 25px
+        border-radius: 25px;
+    }
+    #additem{
+        margin-left: -98px;
+        width: 250px;
+        height: 171px;
+        border-radius: 25px;
     }
     .listname{
         position: relative;
         left: 55px;
+        top: 15px;
     }
     .itemname{
         position: relative;
-        left: 55px;
+        left: 62px;
     }
     #list, #iteminlist{
         width: 210px;
         position: relative;
         left: 21px;
+        top: 33px;
+    } */
+    #add{
+       margin-left: -63px;
     }
-    #add, #add_itemBtn{
-        position: relative;
-        left: 17px;
+    #add_itemBtn{
+        margin-left: -63px;
     }
     #close, #close_itemBtn{
-        position: relative;
-        left: 30px;
-    }
+        margin-left: -15px;
+    } 
     section{
         display: flex;
         flex-direction: column;
-        margin-left: 112px;
+        width: 100vw;
+        margin-left: 72px;
         gap: 30px;
     }
-    
-} 
+    .TodoHeading{
+        display: block;
+    }
+    #backicon{
+        margin-left: -215px;
+    }
+    .textofback{
+        margin-left: -210px;
+    }
+    .head{
+        position: absolute;
+        left: -475px;
+        top: 65px;
+    } 
+    .position{
+        left: 3px;
+        top: 135px;
+    }
+}  
