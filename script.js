@@ -55,14 +55,11 @@ function createtasks(){
 		navbar.style.display = 'none'
 		card.style.display = 'block'
 		card.classList.add('position')
-		// newTodo.style.marginLeft='400px'
-		// newTodo.style.marginTop='100px'
 
 		todos.forEach((boxes) =>{
 			if(boxes !== card)
 			{
-				boxes.style.display = 'none'
-				// newTodo.style.marginLeft='400px'		
+				boxes.style.display = 'none'	
 			}
 		})
 		document.querySelector('.unique').style.display = 'flex'
@@ -73,9 +70,6 @@ function createtasks(){
 			document.querySelector('.unique').style.display = 'none'
 			todos.forEach((boxes)=>{
 				boxes.style.display = 'block'
-				// newTodo.style.marginLeft='0px'
-				// newTodo.style.marginTop='0px'
-
 			})
 			card.classList.remove('position')
 		})
@@ -85,9 +79,6 @@ function createtasks(){
 			document.querySelector('.unique').style.display = 'none'
 			todos.forEach((boxes)=>{
 				boxes.style.display = 'block'
-				// newTodo.style.marginLeft='0px'
-				// newTodo.style.marginTop='0px'
-
 			})
 			card.classList.remove('position')
 		})
