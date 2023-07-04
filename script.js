@@ -33,7 +33,7 @@ function createtasks(){
 	document.querySelector('#header2').style.display = 'none'
 
     var newTodo = document.createElement("div")
-    var TodoHeading = document.createElement("h1")
+    var TodoHeading = document.createElement("h3")
     var line = document.createElement("hr")
     var delTodo = document.createElement("div")
     var addTodo = document.createElement("div")
